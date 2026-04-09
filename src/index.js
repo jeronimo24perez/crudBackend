@@ -63,6 +63,7 @@ app.post('/', async (req, res) =>{
   if(data.email && data.password){
     const user = await taskCollection.insertOne({
         "user": {
+          "username": data.username,
           "email": data.email,
           "password": data.password
         },
