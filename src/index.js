@@ -209,7 +209,10 @@ app.delete('/:id/:taskId', async (req,res)=>{
             tasks: {
                 taskId: new ObjectId(taskId)
             }
-        }}
+        }},
+         {
+    returnDocument: "after" // 
+  }
 )
     return res.status(200).send(taskUpdate)
     }
